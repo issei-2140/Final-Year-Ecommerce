@@ -10,7 +10,7 @@ import orderRoute from './routes/orderRoute';
 import config from './config';
 
 const mongodbUrl = config.MONGODB_URL;
-const port = config.PORT;
+const port = process.env.PORT || 5000;
 mongoose
   .connect(mongodbUrl, {
     useNewUrlParser: true,
@@ -67,6 +67,6 @@ app.post('/upload', (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Server serves at http://localhost:${port}`);
-});
+app.listen(port, () =>
+  console.log("Server serves at http://localhost:" + port)
+);
