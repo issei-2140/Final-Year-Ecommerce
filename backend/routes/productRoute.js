@@ -2,8 +2,11 @@ import express from 'express';
 import asyncHandler from 'express-async-handler';
 import Product from '../models/productModel';
 import { isAuthenticated, isAdmin } from '../util';
+import mongoose from "mongoose";
 
 const router = express.Router();
+
+if( !mongoose.Types.ObjectId.isValid(id) ) return false;
 
 router.get('/', asyncHandler(async (req, res) => {
   const category = req.query.category ? { category: req.query.category } : {};
