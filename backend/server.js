@@ -9,7 +9,7 @@ import productRoute from './routes/productRoute';
 import orderRoute from './routes/orderRoute';
 import config from './config';
 
-const mongodbUrl = process.env.MONGODB_URL || "mongodb://localhost/baazar";
+const mongodbUrl = process.env.MONGODB_URL || "mongodb://localhost/test";
 const port = process.env.PORT || 5000;
 mongoose
   .connect(mongodbUrl, {
